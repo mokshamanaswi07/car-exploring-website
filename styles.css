@@ -202,6 +202,33 @@ section p {
   box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5);
 }
 
+.car-count {
+  margin-left: 20px;
+  color: #00d4ff;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.socials{
+  margin:20px 0;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+}
+
+.socials img{
+  width:40px;
+  height:40px;
+  transition:0.3s;
+  cursor:pointer;
+}
+
+.socials img:hover{
+  transform:scale(1.2);
+  filter:drop-shadow(0 0 10px #00d4ff);
+}
+
 
 /* ===== CAR GRID LAYOUT ===== */
 .cards {
