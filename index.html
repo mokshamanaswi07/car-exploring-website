@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nitro</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+<h1>Nitro</h1>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#cars">Cars</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<h2>Drive Your Dream</h2>
+<button onclick="scrollToCars()">Explore Cars</button>
+</section>
+
+<section class="search-section">
+<input id="searchInput" placeholder="Search car...">
+<button onclick="searchCar()">Search</button>
+<div id="results" class="cards"></div>
+</section>
+
+<section id="cars">
+<h2>Popular Cars</h2>
+<div class="cards" id="carList"></div>
+</section>
+
+<section class="compare">
+<h2>Compare Cars</h2>
+<input id="c1" placeholder="Car 1">
+<input id="c2" placeholder="Car 2">
+<button onclick="compareCars()">Compare</button>
+<p id="compareResult"></p>
+</section>
+
+<section id="about">
+<h2>About Nitro</h2>
+<p>
+Nitro helps users search, explore, and compare cars with performance insights.
+</p>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p>Email: nitro@email.com</p>
+<p>Phone: +91 9999999999</p>
+<p>Facebook | X | Instagram</p>
+<textarea placeholder="Feedback"></textarea>
+<button>Submit</button>
+</section>
+
+<footer>
+<p>© 2026 Nitro</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
