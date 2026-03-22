@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Detail - Nitro</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="car-detail.css">
+</head>
+
+<body>
+
+<header>
+<h1>Nitro</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="index.html#about">About</a>
+<a href="index.html#cars">Cars</a>
+<a href="index.html#contact">Contact</a>
+</nav>
+</header>
+
+<section class="car-detail-section">
+<div class="detail-top">
+<div class="detail-right">
+<img id="carImage" src="" alt="Car">
+</div>
+
+<div class="detail-left">
+<h1 id="carName"></h1>
+<div class="specs">
+<div class="spec-item">
+<span class="spec-label">Price</span>
+<span class="spec-value" id="carPrice"></span>
+</div>
+<div class="spec-item">
+<span class="spec-label">Max Speed</span>
+<span class="spec-value" id="carSpeed"></span>
+</div>
+<div class="spec-item">
+<span class="spec-label">Mileage</span>
+<span class="spec-value" id="carMileage"></span>
+</div>
+<div class="spec-item">
+<span class="spec-label">Engine</span>
+<span class="spec-value" id="carEngine"></span>
+</div>
+<div class="spec-item">
+<span class="spec-label">Popular In</span>
+<span class="spec-value" id="carCity"></span>
+</div>
+</div>
+<p class="car-description" id="carDescription"></p>
+<a href="index.html" class="back-btn">← Back to Cars</a>
+</div>
+</div>
+
+<div class="detail-description">
+<h2>About this Car</h2>
+<p id="carDetails"></p>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Nitro</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+function loadCarDetail(){
+let index = localStorage.getItem('selectedCar');
+let car = cars[index];
+
+if(car){
+document.getElementById('carName').innerText = car.name;
+document.getElementById('carPrice').innerText = '$' + car.price.toLocaleString();
+document.getElementById('carSpeed').innerText = car.speed + ' km/h';
+document.getElementById('carMileage').innerText = car.mileage + ' km/L';
+document.getElementById('carEngine').innerText = car.engine;
+document.getElementById('carCity').innerText = car.city;
+document.getElementById('carDescription').innerText = car.description;
+document.getElementById('carDetails').innerText = car.details;
+document.getElementById('carImage').src = car.img;
+document.title = car.name + ' - Nitro';
+}
+}
+
+loadCarDetail();
+</script>
+</body>
+</html>
