@@ -54,20 +54,6 @@ nav a:hover {
   color: #00d4ff;
 }
 
-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #00d4ff;
-  transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
 
 
 /* ===== HERO SECTION ===== */
