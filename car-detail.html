@@ -1,91 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Car Detail - Nitro</title>
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="car-detail.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Car Detail | Nitro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="car-detail.css" />
 </head>
-
 <body>
+  <header class="header">
+    <h1 class="logo">Nitro</h1>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#cars">Cars</a>
+      <a href="index.html#compare">Compare</a>
+      <a href="index.html#favorites">Favorites</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
 
-<header>
-<h1>Nitro</h1>
-<nav>
-<a href="index.html">Home</a>
-<a href="index.html#about">About</a>
-<a href="index.html#cars">Cars</a>
-<a href="index.html#contact">Contact</a>
-</nav>
-</header>
+  <section class="car-detail-section">
+    <div class="detail-top">
+      <div class="detail-right">
+        <img id="carImage" src="" alt="Car Image" />
+      </div>
 
-<section class="car-detail-section">
-<div class="detail-top">
-<div class="detail-right">
-<img id="carImage" src="" alt="Car">
-</div>
+      <div class="detail-left">
+        <p class="detail-tag">Premium Car Overview</p>
+        <h1 id="carName"></h1>
 
-<div class="detail-left">
-<h1 id="carName"></h1>
-<div class="specs">
-<div class="spec-item">
-<span class="spec-label">Price</span>
-<span class="spec-value" id="carPrice"></span>
-</div>
-<div class="spec-item">
-<span class="spec-label">Max Speed</span>
-<span class="spec-value" id="carSpeed"></span>
-</div>
-<div class="spec-item">
-<span class="spec-label">Mileage</span>
-<span class="spec-value" id="carMileage"></span>
-</div>
-<div class="spec-item">
-<span class="spec-label">Engine</span>
-<span class="spec-value" id="carEngine"></span>
-</div>
-<div class="spec-item">
-<span class="spec-label">Popular In</span>
-<span class="spec-value" id="carCity"></span>
-</div>
-</div>
-<p class="car-description" id="carDescription"></p>
-<a href="index.html" class="back-btn">← Back to Cars</a>
-</div>
-</div>
+        <div class="specs">
+          <div class="spec-item">
+            <span class="spec-label">Price</span>
+            <span class="spec-value" id="carPrice"></span>
+          </div>
 
-<div class="detail-description">
-<h2>About this Car</h2>
-<p id="carDetails"></p>
-</div>
-</section>
+          <div class="spec-item">
+            <span class="spec-label">Max Speed</span>
+            <span class="spec-value" id="carSpeed"></span>
+          </div>
 
-<footer>
-<p>© 2026 Nitro</p>
-</footer>
+          <div class="spec-item">
+            <span class="spec-label">Mileage</span>
+            <span class="spec-value" id="carMileage"></span>
+          </div>
 
-<script src="script.js"></script>
-<script>
-function loadCarDetail(){
-let index = localStorage.getItem('selectedCar');
-let car = cars[index];
+          <div class="spec-item">
+            <span class="spec-label">Engine</span>
+            <span class="spec-value" id="carEngine"></span>
+          </div>
 
-if(car){
-document.getElementById('carName').innerText = car.name;
-document.getElementById('carPrice').innerText = '$' + car.price.toLocaleString();
-document.getElementById('carSpeed').innerText = car.speed + ' km/h';
-document.getElementById('carMileage').innerText = car.mileage + ' km/L';
-document.getElementById('carEngine').innerText = car.engine;
-document.getElementById('carCity').innerText = car.city;
-document.getElementById('carDescription').innerText = car.description;
-document.getElementById('carDetails').innerText = car.details;
-document.getElementById('carImage').src = car.img;
-document.title = car.name + ' - Nitro';
-}
-}
+          <div class="spec-item">
+            <span class="spec-label">Popular In</span>
+            <span class="spec-value" id="carCity"></span>
+          </div>
+        </div>
 
-loadCarDetail();
-</script>
+        <p class="car-description" id="carDescription"></p>
+
+        <div class="detail-buttons">
+          <a href="index.html" class="back-btn">← Back to Cars</a>
+          <button class="fav-detail-btn" id="favoriteDetailBtn">♡ Save</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-description">
+      <h2>About this Car</h2>
+      <p id="carDetails"></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Nitro. Built with speed and style.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function loadCarDetail() {
+      const index = localStorage.getItem("selectedCar");
+      const car = cars[index];
+
+      if (!car) return;
+
+      document.getElementById("carName").innerText = car.name;
+      document.getElementById("carPrice").innerText = "$" + car.price.toLocaleString();
+      document.getElementById("carSpeed").innerText = car.speed + " km/h";
+      document.getElementById("carMileage").innerText = car.mileage + " km/L";
+      document.getElementById("carEngine").innerText = car.engine;
+      document.getElementById("carCity").innerText = car.city;
+      document.getElementById("carDescription").innerText = car.description;
+      document.getElementById("carDetails").innerText = car.details;
+      document.getElementById("carImage").src = car.img;
+      document.getElementById("carImage").alt = car.name;
+      document.title = car.name + " | Nitro";
+
+      const btn = document.getElementById("favoriteDetailBtn");
+
+      function refreshButton() {
+        const favorites = JSON.parse(localStorage.getItem("favoriteCars")) || [];
+        const isSaved = favorites.includes(car.name);
+        btn.textContent = isSaved ? "♥ Saved" : "♡ Save";
+        btn.classList.toggle("saved", isSaved);
+      }
+
+      btn.addEventListener("click", function () {
+        let favorites = JSON.parse(localStorage.getItem("favoriteCars")) || [];
+
+        if (favorites.includes(car.name)) {
+          favorites = favorites.filter(name => name !== car.name);
+        } else {
+          favorites.push(car.name);
+        }
+
+        localStorage.setItem("favoriteCars", JSON.stringify(favorites));
+        refreshButton();
+      });
+
+      refreshButton();
+    }
+
+    loadCarDetail();
+  </script>
 </body>
 </html>
