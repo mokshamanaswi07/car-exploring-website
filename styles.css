@@ -210,10 +210,6 @@ section p {
   cursor:pointer;
 }
 
-.socials img:hover{
-  transform:scale(1.2);
-  filter:drop-shadow(0 0 10px #00d4ff);
-}
 
 
 /* ===== CAR GRID LAYOUT ===== */
