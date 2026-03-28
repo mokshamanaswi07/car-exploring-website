@@ -1,85 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nitro</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nitro | Premium Car Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
+  <header class="header">
+    <h1 class="logo">Nitro</h1>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#cars">Cars</a>
+      <a href="#compare">Compare</a>
+      <a href="#favorites">Favorites</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<header>
-<h1>Nitro</h1>
-<nav>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#cars">Cars</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-tag">Premium Car Discovery Platform</p>
+      <h2>Drive Your Dream Machine</h2>
+      <p>
+        Search, compare, favorite, and explore world-class cars in one stylish experience.
+      </p>
+      <div class="hero-buttons">
+        <button id="exploreBtn">Explore Cars</button>
+        <button id="favoritesBtn" class="secondary-btn">View Favorites</button>
+      </div>
+    </div>
+  </section>
 
-<section class="hero" id="home">
-<h2>Drive Your Dream</h2>
-<button onclick="scrollToCars()">Explore Cars</button>
-</section>
+  <section class="controls-section" id="cars">
+    <h2>Find Your Perfect Car</h2>
 
-<section class="search-section">
-<input id="searchInput" placeholder="Search car...">
-<button onclick="searchCar()">Search</button>
-<span id="carCount" class="car-count"></span>
-<div id="results" class="cards"></div>
-</section>
+    <div class="controls-grid">
+      <input type="text" id="searchInput" placeholder="Search by car name..." />
 
-<section id="cars">
-<h2>Popular Cars</h2>
-<div class="cards" id="carList"></div>
-</section>
+      <select id="sortSelect">
+        <option value="default">Sort By</option>
+        <option value="priceLow">Price: Low to High</option>
+        <option value="priceHigh">Price: High to Low</option>
+        <option value="speedHigh">Top Speed</option>
+        <option value="nameAZ">Name: A to Z</option>
+      </select>
 
-<section class="compare">
-<h2>Compare Cars</h2>
-<input id="c1" placeholder="Car 1">
-<input id="c2" placeholder="Car 2">
-<button onclick="compareCars()">Compare</button>
-<p id="compareResult"></p>
-</section>
+      <select id="priceFilter">
+        <option value="all">All Prices</option>
+        <option value="100000">Under $100,000</option>
+        <option value="200000">Under $200,000</option>
+        <option value="500000">Under $500,000</option>
+      </select>
+    </div>
 
-<section id="about">
-<h2>About Nitro</h2>
-<p>
-Nitro helps users search, explore, and compare cars with performance insights.
-</p>
-</section>
+    <div class="stats-row">
+      <span id="carCount" class="badge"></span>
+      <span id="favoriteCount" class="badge"></span>
+    </div>
 
-<section id="contact">
-<h2>Contact</h2>
-<p>Email: nitro@email.com</p>
-<p>Phone: +91 9999999999</p>
-<div class="socials">
-  <a href="https://www.instagram.com" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-  </a>
+    <div class="search-results-wrapper">
+      <div class="cards" id="carList"></div>
+    </div>
+  </section>
 
-  <a href="https://www.facebook.com" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-  </a>
+  <section id="compare" class="compare-section">
+    <div class="section-header">
+      <h2>Compare Cars</h2>
+      <p>Choose two cars and instantly compare their key specs.</p>
+    </div>
 
-  <a href="https://www.twitter.com" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="X">
-  </a>
+    <div class="compare-controls">
+      <input id="c1" placeholder="Enter first car name" />
+      <input id="c2" placeholder="Enter second car name" />
+      <button id="compareBtn">Compare Now</button>
+    </div>
 
-  <a href="mailto:nitro@email.com">
-    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
-  </a>
-</div>
-<textarea placeholder="Feedback"></textarea>
-<button>Submit</button>
-</section>
+    <div id="compareResult" class="compare-result"></div>
+  </section>
 
-<footer>
-<p>© 2026 Nitro</p>
-</footer>
+  <section id="favorites" class="favorites-section">
+    <div class="section-header">
+      <h2>Your Favorites</h2>
+      <p>Cars you have saved for later.</p>
+    </div>
+    <div class="cards" id="favoriteList"></div>
+  </section>
 
-<script src="script.js"></script>
+  <section id="about" class="about-section">
+    <h2>About Nitro</h2>
+    <p>
+      Nitro is a modern car exploration website built to help users discover, compare,
+      and save premium cars with a smooth and attractive browsing experience.
+    </p>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="section-header">
+      <h2>Contact Nitro</h2>
+      <p>
+        Have questions, suggestions, or feedback? Reach out and let’s talk cars.
+      </p>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact-info-card">
+        <p class="contact-tag">Get In Touch</p>
+        <h3>Let’s Build Your Dream Garage</h3>
+        <p class="contact-info-text">
+          Nitro helps car lovers discover, compare, and save premium cars.
+          Feel free to contact us for support, ideas, or collaborations.
+        </p>
+
+        <div class="contact-info-list">
+          <div class="contact-info-box">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">nitro@email.com</span>
+          </div>
+
+          <div class="contact-info-box">
+            <span class="contact-label">Phone</span>
+            <span class="contact-value">+91 9999999999</span>
+          </div>
+
+          <div class="contact-info-box">
+            <span class="contact-label">Location</span>
+            <span class="contact-value">Chennai, India</span>
+          </div>
+        </div>
+
+        <div class="socials">
+          <a href="https://www.instagram.com" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+          </a>
+          <a href="https://www.facebook.com" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+          </a>
+          <a href="https://www.twitter.com" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="X">
+          </a>
+          <a href="mailto:nitro@email.com">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-card">
+        <h3>Send a Message</h3>
+        <form class="contact-form">
+          <div class="form-row">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+          </div>
+
+          <input type="text" placeholder="Subject" required>
+
+          <textarea placeholder="Write your message here..." required></textarea>
+
+          <button type="submit" class="contact-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Nitro. Built with speed and style.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
