@@ -160,7 +160,7 @@ speed:186,
 mileage:330,
 engine:"3.0L Supercharged V6",
 city:"Coventry",
-img:"https://www.pngall.com/wp-content/uploads/5/Jaguar-F-Type-PNG-Image.png",
+img:"https://th.bing.com/th/id/R.83d744eca364aaafe6fbeda07ff7e934?rik=UXhnPU%2b%2bH1V9Ww&riu=http%3a%2f%2fpurepng.com%2fpublic%2fuploads%2flarge%2fpurepng.com-black-jaguar-f-type-coupe-carcarvehicletransportjaguar-961524646356o2udu.png&ehk=18QQRQF8h3N7uOhDUGNE5%2bf8VjZygpH4ZXVwY%2ffd6Ao%3d&risl=&pid=ImgRaw&r=0",
 description:"The Jaguar F-Type is a British sports car combining elegant design with thrilling performance. Its distinctive sound and responsive handling deliver driving pleasure.",
 details:"With a focus on lightweight construction and driver engagement, the F-Type offers a purer driving experience. Available in coupe and convertible forms for maximum enjoyment."
 },
@@ -171,7 +171,7 @@ speed:195,
 mileage:320,
 engine:"5.2L Twin-Turbo V12",
 city:"Gaydon",
-img:"https://www.pngall.com/wp-content/uploads/5/Aston-Martin-Vantage-PNG-Image.png",
+img:"https://www.pngplay.com/wp-content/uploads/13/Aston-Martin-Vantage-PNG-Photo-Image.png",
 description:"The Aston Martin Vantage is a British grand tourer combining sophistication with high performance. Its stunning design and handcrafted interior epitomize luxury sports cars.",
 details:"Powered by a potent V12 engine, the Vantage delivers both power and elegance. It represents Aston Martin's commitment to creating cars that are as beautiful as they are fast."
 }
